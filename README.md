@@ -103,7 +103,7 @@ then
             $curl_args \
             "${url}languages"
 else
-    echo "Not translate"
+    echo "Invalid function"
 fi
 
 ```

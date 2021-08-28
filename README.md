@@ -1,5 +1,5 @@
 # LibreTranslate-sh
-Unix bindings for LibreTranslate
+Unix bindings for [LibreTranslate](https://libretranslate.com)
 
 # Examples
 ```
@@ -31,32 +31,43 @@ export LIBRETRANSLATE_API_KEY="<my-api-key>"
 
 ```
 
+Parse with jq:
+```
+./libretranslate translate en es "Hello World" | jq '.translatedText'
+"Hola Mundo"
+```
+
 Format with jq:
 ```
 ./libretranslate translate en es "Hello World" | jq '.'
 {
   "translatedText": "Hola Mundo"
 }
-
-```
-
-Parse with jq:
-```
-./libretranslate translate en es "Hello World" | jq '.translatedText'
-"Hola Mundo"
-
 ```
 
 # Dependencies
-[cURL](https://curl.se/)
+[cURL](https://curl.se/):
 ```
 sudo apt install curl
+
 ```
 
-[jq](https://stedolan.github.io/jq/) (optional)
+[jq](https://stedolan.github.io/jq/) (optional):
 ```
 sudo apt install jq
+
 ```
+
+# Install 
+```
+curl https://raw.githubusercontent.com/argosopentech/LibreTranslate-sh/main/libretranslate > libretranslate
+chmod +x libretranslate
+
+```
+
+# Development video
+- [YouTube](https://www.youtube.com/watch?v=774KxfzhYMI)
+- [LBRY](https://odysee.com/@argosopentech:7/unix-bindings-for-libretranslate:3)
 
 # Source
 ```

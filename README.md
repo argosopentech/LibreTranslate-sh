@@ -1,7 +1,7 @@
 # LibreTranslate-sh
-Unix bindings for [LibreTranslate](https://libretranslate.com)
+Unix bindings for [LibreTranslate](https://libretranslate.com).
 
-# Examples
+## Examples
 ```
 ./libretranslate translate en es "Hello World"
 {"translatedText":"Hola Mundo"}
@@ -45,7 +45,7 @@ Format with jq:
 }
 ```
 
-# Dependencies
+## Dependencies
 [cURL](https://curl.se/):
 ```
 sudo apt install curl
@@ -58,18 +58,18 @@ sudo apt install jq
 
 ```
 
-# Install 
+## Install 
 ```
 curl https://raw.githubusercontent.com/argosopentech/LibreTranslate-sh/main/libretranslate > libretranslate
 chmod +x libretranslate
 
 ```
 
-# Development video
+## Development video
 - [YouTube](https://www.youtube.com/watch?v=774KxfzhYMI)
 - [LBRY](https://odysee.com/@argosopentech:7/unix-bindings-for-libretranslate:3)
 
-# Source
+## Source
 ```
 if [ $LIBRETRANSLATE_URL ]
 then

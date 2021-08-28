@@ -115,6 +115,7 @@ then
             "${url}languages"
 else
     echo "Invalid function"
+    exit 1
 fi
 
 ```

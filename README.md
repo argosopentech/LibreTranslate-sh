@@ -31,8 +31,79 @@ export LIBRETRANSLATE_API_KEY="<my-api-key>"
 
 ```
 
+Format with jq:
+```
+./libretranslate translate en es "Hello World" | jq '.'
+{
+  "translatedText": "Hola Mundo"
+}
+
+```
+
+Parse with jq:
+```
+./libretranslate translate en es "Hello World" | jq '.translatedText'
+"Hola Mundo"
+
+```
+
 # Dependencies
 [cURL](https://curl.se/)
 ```
 sudo apt install curl
+```
+
+[jq](https://stedolan.github.io/jq/) (optional)
+```
+sudo apt install jq
+```
+
+# Source
+```
+if [ $LIBRETRANSLATE_URL ]
+then
+    url=$LIBRETRANSLATE_URL
+else
+    url="https://translate.argosopentech.com/"
+fi
+
+if [ $LIBRETRANSLATE_API_KEY ]
+then
+    api_key_flag="-F \"api_key=${$LIBRETRANSLATE_API_KEY}\""
+else
+    api_key_flag=""
+fi
+
+curl_args="--silent --show-error "
+
+fun=$1
+if [ $fun == "translate" ]
+then
+    source=$2
+    target=$3
+    q=$4
+    curl -X POST \
+            $curl_args \
+            -F "q=$q" \
+            -F "source=$source" \
+            -F "target=$target" \
+	    $api_key_flag \
+            "${url}translate"
+elif [ $fun == "detect" ]
+then
+    q=$2
+    curl -X POST \
+            $curl_args \
+            -F "q=$q" \
+	    $api_key_flag \
+            "${url}detect"
+elif [ $fun == "languages" ]
+then
+    curl -X POST \
+            $curl_args \
+            "${url}languages"
+else
+    echo "Not translate"
+fi
+
 ```

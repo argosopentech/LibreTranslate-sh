@@ -5,6 +5,13 @@ else
     url="https://translate.argosopentech.com/"
 fi
 
+if [ $LIBRETRANSLATE_API_KEY ]
+then
+    api_key_flag="-F \"api_key=${$LIBRETRANSLATE_API_KEY}\""
+else
+    api_key_flag=""
+fi
+
 fun=$1
 if [ $fun == "translate" ]
 then
@@ -15,12 +22,14 @@ then
             -F "q=$q" \
             -F "source=$source" \
             -F "target=$target" \
+	    $api_key_flag \
             "${url}translate"
 elif [ $fun == "detect" ]
 then
     q=$2
     curl -X POST \
             -F "q=$q" \
+	    $api_key_flag \
             "${url}detect"
 elif [ $fun == "languages" ]
 then

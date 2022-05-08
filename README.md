@@ -65,10 +65,6 @@ chmod +x libretranslate
 
 ```
 
-## Development video
-- [YouTube](https://www.youtube.com/watch?v=774KxfzhYMI)
-- [LBRY](https://odysee.com/@argosopentech:7/unix-bindings-for-libretranslate:3)
-
 ## Source
 ```
 if [ $LIBRETRANSLATE_URL ]

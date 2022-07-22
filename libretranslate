@@ -32,5 +32,5 @@ case "$1" in
 		curl -X POST \
             		$curl_args \
             		"${url}languages" ;;
-	*) echo 'Invalid function' && exit 1
+	*) echo 'Invalid function' && exit 1 ;;
 esac

@@ -1,12 +1,12 @@
 #!/bin/sh
 #
-# Shell script for working with the libretranslate API
+# Shell script for working with the LibreTranslate API
 
-url=${LIBRETRANSLATE_URL:-"https://translate.argosopentech.com/"}
+url=${LIBRETRANSLATE_URL:-'https://translate.argosopentech.com/'}
 
-[ -z "$LIBRETRANSLATE_API_KEY" ] && api_key_flag="-F \"api_key=${LIBRETRANSLATE_API_KEY}\""
+[ -n "$LIBRETRANSLATE_API_KEY" ] && api_key_flag="-F \"api_key=${LIBRETRANSLATE_API_KEY}\""
 
-curl_args="--silent --show-error "
+curl_args='--silent --show-error '
 
 case "$1" in
 	'translate')

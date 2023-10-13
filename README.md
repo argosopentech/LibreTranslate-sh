@@ -1,5 +1,5 @@
 # LibreTranslate-sh
-Unix bindings for [LibreTranslate](https://libretranslate.com).
+Unix bindings to connect to a [LibreTranslate API](https://libretranslate.com)
 
 ## Examples
 ```

@@ -73,7 +73,7 @@ if [ $LIBRETRANSLATE_URL ]
 then
     url=$LIBRETRANSLATE_URL
 else
-    url="https://translate.argosopentech.com/"
+    url="https://libretranslate.com/"
 fi
 
 if [ $LIBRETRANSLATE_API_KEY ]

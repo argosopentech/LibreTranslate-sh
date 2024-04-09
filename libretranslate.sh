@@ -1,3 +1,5 @@
+#!/bin/sh
+
 if [ $LIBRETRANSLATE_URL ]
 then
     url=$LIBRETRANSLATE_URL

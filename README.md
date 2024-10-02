@@ -78,7 +78,7 @@ fi
 
 if [ $LIBRETRANSLATE_API_KEY ]
 then
-    api_key_flag="-F \"api_key=${$LIBRETRANSLATE_API_KEY}\""
+    api_key_flag="-F \"api_key=${LIBRETRANSLATE_API_KEY}\""
 else
     api_key_flag=""
 fi
